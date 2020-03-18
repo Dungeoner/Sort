@@ -10,8 +10,11 @@ namespace Sort
     {
         static void Main(string[] args)
         {
-            var selection = new SortSelect();
-            selection.Selection();
+            var selection = new SortFuctory();
+            var Sort = selection.Selection();
+            var array = Array.ArrayFill();
+            Sort.Sort(array);
+            Console.WriteLine("Sorted array: {0}", string.Join(", ", array));
             Console.ReadKey();
         }
     }

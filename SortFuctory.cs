@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -8,17 +9,10 @@ using System.Threading.Tasks;
 
 namespace Sort
 {
-    class SortSelect
+    class SortFuctory
     {
-        private static void Sort(ISort sort, int[] array)
+        public ISort Selection()
         {
-            sort.Sort(array);
-            Console.WriteLine("Sorted array: {0}", string.Join(", ", array));
-        }
-        public void Selection()
-        {
-            var merge = new MergeSort();
-            var insertion = new InsertionSort();
             Console.WriteLine("Select sort method:");
             Console.WriteLine("1 - Merge");
             Console.WriteLine("2 - Insertion");
@@ -26,16 +20,12 @@ namespace Sort
             {
                 case "1":
                     Console.WriteLine("Merge");
-                    Sort(merge, Array.ArrayFill());
-                    break;
+                    return new MergeSort();
                 case "2":
                     Console.WriteLine("Insertion");
-                    Sort(insertion, Array.ArrayFill());
-                    break;
+                    return new InsertionSort();
                 default:
-                    Console.WriteLine("Wrong!");
-                    break;
-
+                    throw new Exception("Wrong number");
             }
         }
     }

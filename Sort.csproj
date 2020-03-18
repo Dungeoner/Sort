@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array.cs" />
-    <Compile Include="SortSelect.cs" />
+    <Compile Include="SortFuctory.cs" />
     <Compile Include="ISort.cs" />
     <Compile Include="MergeSort.cs" />
     <Compile Include="Program.cs" />

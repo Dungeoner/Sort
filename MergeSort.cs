@@ -8,6 +8,10 @@ namespace Sort
 {
     class MergeSort : ISort
     {
+        public int[] Sort(int[] array)
+        {
+            return Separate(array, 0, array.Length - 1);
+        }
         private void Sort(int[] array, int minIndex, int middleIndex, int maxIndex)
         {
             var buffer = new int[maxIndex - minIndex + 1];
@@ -61,11 +65,6 @@ namespace Sort
             Sort(array, minIndex, middleIndex, maxIndex);
 
             return array;
-        }
-
-        public int[] Sort(int[] array)
-        {
-            return Separate(array, 0, array.Length - 1);
         }
     }
 }
